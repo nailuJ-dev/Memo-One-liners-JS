@@ -1,5 +1,9 @@
-# Memo-One-liners-JS
-Try to compile the most useful JS one-liners
+# Memo-One-liners-&-Useful-Functions-JS
+Compilation en français des meilleurs one-liners de JS ES6 et des fonctions les plus utiles pour le développement web. Revenez voir de temps à autres puis que j'essaierai de ne pas oubleir de mettre à jour avec mes découvertes.
+
+---
+
+## One-liners
 
 ---
 
@@ -295,4 +299,223 @@ Try to compile the most useful JS one-liners
     *   **Fonctionnement :** `Array.isArray()` est la méthode la plus fiable pour déterminer si une valeur est un tableau.
     *   **Usage :** Validation de type avant d'utiliser des méthodes de tableau.
 
+---
+
+## Fonctions
+
+---
+
+1.  **`Array.prototype.map()`**
+    ```javascript
+    const idsProduits = produits.map(produit => produit.id);
+    const elementsLi = donnees.map(item => `<li>${item.nom}</li>`);
+    ```
+    *   **Fonctionnement :** Crée un **nouveau tableau** avec les résultats de l'appel d'une fonction fournie sur chaque élément du tableau d'origine. Elle ne modifie pas le tableau original.
+    *   **Tâches Concrètes (Développement Web) :**
+        *   Transformer des données reçues d'une API pour les adapter à l'affichage (ex: extraire uniquement les noms d'une liste d'objets utilisateurs).
+        *   Générer des listes d'éléments JSX/HTML à partir d'un tableau de données (très courant en React, Vue, Angular).
+        *   Créer des tableaux de valeurs calculées (ex: une liste de prix TTC à partir de prix HT).
+
+2.  **`Array.prototype.filter()`**
+    ```javascript
+    const produitsEnStock = produits.filter(produit => produit.stock > 0);
+    const commentairesActifs = commentaires.filter(commentaire => commentaire.estApprouve);
+    ```
+    *   **Fonctionnement :** Crée un **nouveau tableau** contenant uniquement les éléments du tableau d'origine qui passent un test (la fonction de rappel retourne `true`).
+    *   **Tâches Concrètes (Développement Web) :**
+        *   Filtrer des listes de données basées sur des critères de recherche ou des états (ex: afficher uniquement les tâches complétées, les produits d'une certaine catégorie).
+        *   Retirer les éléments invalides ou non désirés d'un tableau avant traitement ou affichage.
+        *   Implémenter des fonctionnalités de filtrage dans une interface utilisateur.
+
+3.  **`Array.prototype.find()`**
+    ```javascript
+    const utilisateurCourant = utilisateurs.find(user => user.id === idUtilisateurConnecte);
+    const articleSelectionne = articles.find(article => article.slug === 'mon-super-article');
+    ```
+    *   **Fonctionnement :** Retourne la **valeur du premier élément** du tableau qui satisfait la condition fournie par la fonction de test. Si aucun élément ne correspond, retourne `undefined`.
+    *   **Tâches Concrètes (Développement Web) :**
+        *   Récupérer un objet spécifique d'une liste en fonction d'un identifiant unique.
+        *   Vérifier si un élément avec certaines caractéristiques existe dans une collection.
+        *   Trouver l'objet de configuration correspondant à une route active.
+
+4.  **`Array.prototype.reduce()`**
+    ```javascript
+    const totalPanier = itemsPanier.reduce((total, item) => total + (item.prix * item.quantite), 0);
+    const categoriesComptees = produits.reduce((acc, produit) => {
+      acc[produit.categorie] = (acc[produit.categorie] || 0) + 1;
+      return acc;
+    }, {}); // Résultat: { electronique: 5, livres: 3 }
+    ```
+    *   **Fonctionnement :** Applique une fonction "réducteur" à chaque élément du tableau (de gauche à droite) pour le réduire à une **valeur unique** (l'accumulateur). Le deuxième argument de `reduce` est la valeur initiale de l'accumulateur.
+    *   **Tâches Concrètes (Développement Web) :**
+        *   Calculer des sommes, des moyennes, ou d'autres agrégats à partir de listes (ex: total d'un panier d'achat).
+        *   Regrouper des données ou les transformer en une structure différente (ex: compter le nombre d'éléments par catégorie, créer un objet "lookup" comme vu précédemment).
+        *   Aplatir des tableaux (bien que `flat()` soit souvent plus simple pour cela).
+
+5.  **Fonctions Fléchées `=>`**
+    ```javascript
+    elements.forEach(element => element.classList.add('active'));
+    fetch('/api/data').then(response => response.json()).then(data => console.log(data));
+    ```
+    *   **Fonctionnement :** Fournissent une syntaxe plus concise pour écrire des fonctions. Crucialement, elles n'ont pas leur propre `this` ; elles héritent le `this` du contexte lexical environnant.
+    *   **Tâches Concrètes (Développement Web) :**
+        *   Callbacks pour les méthodes de tableau (`map`, `filter`, `forEach`, etc.).
+        *   Gestionnaires d'événements simples.
+        *   Callbacks pour les Promises (`.then()`, `.catch()`).
+        *   Rend le code plus court et souvent plus lisible pour les petites fonctions.
+
+6.  **Déstructuration d'Objets et de Tableaux**
+    ```javascript
+    // Objet
+    const { id, titre, contenu } = articleAPI;
+    function MonComposant({ utilisateur, options }) { /* ... */ }
+
+    // Tableau
+    const [premierElement, secondElement] = monTableau;
+    const [latitude, longitude] = await obtenirCoordonnees();
+    ```
+    *   **Fonctionnement :** Permet d'extraire des valeurs d'objets ou de tableaux et de les assigner à des variables distinctes de manière concise.
+    *   **Tâches Concrètes (Développement Web) :**
+        *   Extraire des propriétés spécifiques de réponses d'API ou d'objets d'état.
+        *   Passer des "props" à des composants React/Vue de manière plus propre.
+        *   Travailler avec les valeurs retournées par des Hooks React (ex: `const [etat, setEtat] = useState()`).
+        *   Récupérer des éléments spécifiques de tableaux (ex: coordonnées, résultats multiples d'une fonction).
+
+7.  **Template Literals (Gabarits Chaînes) `` `...${}...` ``**
+    ```javascript
+    const urlApi = `https://api.example.com/users/${userId}?apiKey=${API_KEY}`;
+    const messageBienvenue = `<h1>Bonjour, ${utilisateur.prenom} !</h1>`;
+    ```
+    *   **Fonctionnement :** Permettent d'intégrer des expressions JavaScript (variables, appels de fonctions) directement dans des chaînes de caractères en utilisant la syntaxe `${expression}`. Elles supportent aussi les chaînes multi-lignes.
+    *   **Tâches Concrètes (Développement Web) :**
+        *   Construire des URLs dynamiques pour les appels API.
+        *   Générer des chaînes HTML ou des messages dynamiques pour l'interface utilisateur.
+        *   Rendre la concaténation de chaînes beaucoup plus lisible.
+
+8.  **Opérateur de Décomposition (Spread Operator) `...`**
+    ```javascript
+    const nouveauxParametres = { ...anciensParametres, theme: 'sombre' }; // Fusion/Mise à jour d'objet
+    const listeComplete = [...listeA, ...listeB]; // Fusion de tableaux
+    maFonction(...argsTableau); // Passer les éléments d'un tableau comme arguments distincts
+    ```
+    *   **Fonctionnement :** "Décompose" un itérable (comme un tableau ou une chaîne) en éléments individuels, ou "étale" les propriétés d'un objet dans un autre objet.
+    *   **Tâches Concrètes (Développement Web) :**
+        *   Cloner des tableaux et des objets (superficiellement).
+        *   Fusionner des tableaux ou des objets.
+        *   Passer des props à des composants React de manière concise (ex: `<MonComposant {...propsObjet} />`).
+        *   Créer de nouveaux tableaux/objets en ajoutant/modifiant des éléments/propriétés sans muter les originaux (important pour l'immutabilité).
+
+9.  **Modules ES6 (`import` / `export`)**
+    ```javascript
+    // fichier utils.js
+    export const calculerTotal = (a, b) => a + b;
+    export default function afficherMessage(msg) { console.log(msg); }
+
+    // fichier app.js
+    import afficherMessageParDefaut, { calculerTotal } from './utils.js';
+    ```
+    *   **Fonctionnement :** Un système standardisé pour organiser le code en modules réutilisables. `export` rend des fonctions, objets ou primitives disponibles, et `import` les charge dans d'autres modules.
+    *   **Tâches Concrètes (Développement Web) :**
+        *   Structurer l'ensemble de votre application front-end et/ou back-end (Node.js).
+        *   Partager des fonctions utilitaires, des composants, des services entre différentes parties de votre code.
+        *   Permettre aux outils de build (Webpack, Rollup, Parcel) de faire du "tree-shaking" (éliminer le code non utilisé).
+
+10. **Promises et `async/await`**
+    ```javascript
+    async function recupererDonneesUtilisateur(userId) {
+      try {
+        const reponse = await fetch(`/api/users/${userId}`);
+        if (!reponse.ok) throw new Error(`Erreur HTTP: ${reponse.status}`);
+        const donnees = await reponse.json();
+        return donnees;
+      } catch (erreur) {
+        console.error("Impossible de récupérer l'utilisateur:", erreur);
+        // Gérer l'erreur, peut-être retourner une valeur par défaut ou relancer
+      }
+    }
+    ```
+    *   **Fonctionnement :**
+        *   **Promises :** Représentent l'achèvement (ou l'échec) éventuel d'une opération asynchrone.
+        *   **`async` :** Déclare une fonction qui retourne implicitement une Promise.
+        *   **`await` :** Utilisé à l'intérieur d'une fonction `async`, met en pause l'exécution de la fonction jusqu'à ce que la Promise à sa droite soit résolue ou rejetée. Si résolue, retourne la valeur de résolution. Si rejetée, lève l'erreur.
+    *   **Tâches Concrètes (Développement Web) :**
+        *   Effectuer des appels API (`fetch`).
+        *   Interagir avec des bases de données côté serveur (Node.js).
+        *   Gérer toute opération qui prend du temps et qui ne doit pas bloquer le thread principal (ex: lecture de fichier, timers complexes).
+        *   Rendre le code asynchrone beaucoup plus lisible et semblable à du code synchrone.
+
+11. **`fetch()` API**
+    ```javascript
+    fetch('https://api.example.com/data')
+      .then(response => {
+        if (!response.ok) throw new Error('Réponse réseau non OK');
+        return response.json(); // Parse la réponse JSON en objet JS
+      })
+      .then(data => console.log('Données reçues:', data))
+      .catch(error => console.error('Erreur de fetch:', error));
+    ```
+    *   **Fonctionnement :** Une interface JavaScript moderne pour effectuer des requêtes HTTP (remplace `XMLHttpRequest`). Elle est basée sur les Promises.
+    *   **Tâches Concrètes (Développement Web) :**
+        *   Récupérer des données depuis des APIs RESTful.
+        *   Envoyer des données à un serveur (avec les méthodes `POST`, `PUT`, etc., en configurant l'objet `options` de `fetch`).
+        *   Interagir avec des services tiers.
+
+12. **Paramètres de Fonction par Défaut**
+    ```javascript
+    function creerElement(tag = 'div', contenu = '', classes = []) {
+      const element = document.createElement(tag);
+      element.textContent = contenu;
+      element.classList.add(...classes);
+      return element;
+    }
+    ```
+    *   **Fonctionnement :** Permet d'assigner des valeurs par défaut aux paramètres d'une fonction si aucun argument n'est fourni pour eux, ou si `undefined` est passé.
+    *   **Tâches Concrètes (Développement Web) :**
+        *   Rendre les fonctions plus flexibles et moins sujettes aux erreurs si certains arguments sont optionnels.
+        *   Définir des configurations par défaut pour des fonctions utilitaires ou des constructeurs de composants.
+
+13. **Paramètres Rest `...`**
+    ```javascript
+    function sommerTous(...nombres) { // nombres devient un tableau [1, 2, 3, 4]
+      return nombres.reduce((sum, num) => sum + num, 0);
+    }
+    sommerTous(1, 2, 3, 4); // Retourne 10
+    ```
+    *   **Fonctionnement :** Permet à une fonction de recevoir un nombre indéfini d'arguments sous forme d'un tableau. Doit être le dernier paramètre de la fonction.
+    *   **Tâches Concrètes (Développement Web) :**
+        *   Créer des fonctions qui acceptent un nombre variable d'arguments (ex: une fonction de logging, une fonction qui combine plusieurs objets de configuration).
+        *   Transférer des arguments d'une fonction à une autre.
+
+14. **Optional Chaining `?.`** (Déjà vu, mais son utilité en dev web est immense)
+    ```javascript
+    const nomAuteur = article?.auteur?.nom ?? 'Anonyme';
+    const onClickHandler = props.callbacks?.onClick; // si onClick est optionnel
+    if (onClickHandler) onClickHandler();
+    ```
+    *   **Fonctionnement :** Permet d'accéder à des propriétés ou d'appeler des méthodes sur des objets potentiellement `null` ou `undefined` sans causer d'erreur. Si une partie de la chaîne est `null` ou `undefined`, l'expression entière court-circuite et retourne `undefined`.
+    *   **Tâches Concrètes (Développement Web) :**
+        *   Accéder en toute sécurité à des données imbriquées provenant d'API ou d'états complexes (très fréquent dans les applications React/Vue/Angular).
+        *   Appeler des fonctions de rappel optionnelles passées en props.
+        *   Réduire la verbosité des vérifications `if (obj && obj.prop && obj.prop.subProp)`.
+
+15. **`Object.entries()`, `Object.keys()`, `Object.values()`**
+    ```javascript
+    const config = { theme: 'dark', fontSize: 16, showTooltips: true };
+    Object.keys(config).forEach(key => console.log(key)); // 'theme', 'fontSize', 'showTooltips'
+    Object.values(config).forEach(value => console.log(value)); // 'dark', 16, true
+    for (const [key, value] of Object.entries(config)) {
+      console.log(`${key}: ${value}`);
+    }
+    ```
+    *   **Fonctionnement :**
+        *   `Object.keys(obj)` : Retourne un tableau des propres clés énumérables de `obj`.
+        *   `Object.values(obj)` : Retourne un tableau des propres valeurs énumérables de `obj`.
+        *   `Object.entries(obj)` : Retourne un tableau de paires `[clé, valeur]` des propres propriétés énumérables de `obj`.
+    *   **Tâches Concrètes (Développement Web) :**
+        *   Itérer sur les propriétés d'un objet de configuration pour les afficher ou les traiter.
+        *   Vérifier si un objet contient certaines clés ou valeurs.
+        *   Transformer des objets (ex: convertir un objet en `Map`, ou filtrer un objet pour ne garder que certaines paires clé/valeur).
+        *   Afficher dynamiquement les données d'un objet dans une interface utilisateur.
+
+---
 
