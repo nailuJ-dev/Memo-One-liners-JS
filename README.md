@@ -357,12 +357,12 @@ Compilation en français des meilleurs one-liners de JS ES6 et des fonctions les
     elements.forEach(element => element.classList.add('active'));
     fetch('/api/data').then(response => response.json()).then(data => console.log(data));
     ```
-    *   **Fonctionnement :** Fournissent une syntaxe plus concise pour écrire des fonctions. Crucialement, elles n'ont pas leur propre `this` ; elles héritent le `this` du contexte lexical environnant.
+    *   **Fonctionnement :** Fournissent une syntaxe plus concise pour écrire des fonctions. Crucialement, elles n'ont pas leur propre `this` ; elles héritent le `this` du contexte lexical environnant
     *   **Tâches Concrètes (Développement Web) :**
-        *   Callbacks pour les méthodes de tableau (`map`, `filter`, `forEach`, etc.).
-        *   Gestionnaires d'événements simples.
-        *   Callbacks pour les Promises (`.then()`, `.catch()`).
-        *   Rend le code plus court et souvent plus lisible pour les petites fonctions.
+        *   Callbacks pour les méthodes de tableau (`map`, `filter`, `forEach`, etc.)
+        *   Gestionnaires d'événements simples
+        *   Callbacks pour les Promises (`.then()`, `.catch()`)
+        *   Rend le code plus court et souvent plus lisible pour les petites fonctions
 
 6.  **Déstructuration d'Objets et de Tableaux**
     ```javascript
@@ -374,23 +374,23 @@ Compilation en français des meilleurs one-liners de JS ES6 et des fonctions les
     const [premierElement, secondElement] = monTableau;
     const [latitude, longitude] = await obtenirCoordonnees();
     ```
-    *   **Fonctionnement :** Permet d'extraire des valeurs d'objets ou de tableaux et de les assigner à des variables distinctes de manière concise.
+    *   **Fonctionnement :** Permet d'extraire des valeurs d'objets ou de tableaux et de les assigner à des variables distinctes de manière concise
     *   **Tâches Concrètes (Développement Web) :**
-        *   Extraire des propriétés spécifiques de réponses d'API ou d'objets d'état.
-        *   Passer des "props" à des composants React/Vue de manière plus propre.
-        *   Travailler avec les valeurs retournées par des Hooks React (ex: `const [etat, setEtat] = useState()`).
-        *   Récupérer des éléments spécifiques de tableaux (ex: coordonnées, résultats multiples d'une fonction).
+        *   Extraire des propriétés spécifiques de réponses d'API ou d'objets d'état
+        *   Passer des "props" à des composants React/Vue de manière plus propre
+        *   Travailler avec les valeurs retournées par des Hooks React (ex: `const [etat, setEtat] = useState()`)
+        *   Récupérer des éléments spécifiques de tableaux (ex: coordonnées, résultats multiples d'une fonction)
 
 7.  **Template Literals (Gabarits Chaînes) `` `...${}...` ``**
     ```javascript
     const urlApi = `https://api.example.com/users/${userId}?apiKey=${API_KEY}`;
     const messageBienvenue = `<h1>Bonjour, ${utilisateur.prenom} !</h1>`;
     ```
-    *   **Fonctionnement :** Permettent d'intégrer des expressions JavaScript (variables, appels de fonctions) directement dans des chaînes de caractères en utilisant la syntaxe `${expression}`. Elles supportent aussi les chaînes multi-lignes.
+    *   **Fonctionnement :** Permettent d'intégrer des expressions JavaScript (variables, appels de fonctions) directement dans des chaînes de caractères en utilisant la syntaxe `${expression}`. Elles supportent aussi les chaînes multi-lignes
     *   **Tâches Concrètes (Développement Web) :**
-        *   Construire des URLs dynamiques pour les appels API.
-        *   Générer des chaînes HTML ou des messages dynamiques pour l'interface utilisateur.
-        *   Rendre la concaténation de chaînes beaucoup plus lisible.
+        *   Construire des URLs dynamiques pour les appels API
+        *   Générer des chaînes HTML ou des messages dynamiques pour l'interface utilisateur
+        *   Rendre la concaténation de chaînes beaucoup plus lisible
 
 8.  **Opérateur de Décomposition (Spread Operator) `...`**
     ```javascript
@@ -398,12 +398,12 @@ Compilation en français des meilleurs one-liners de JS ES6 et des fonctions les
     const listeComplete = [...listeA, ...listeB]; // Fusion de tableaux
     maFonction(...argsTableau); // Passer les éléments d'un tableau comme arguments distincts
     ```
-    *   **Fonctionnement :** "Décompose" un itérable (comme un tableau ou une chaîne) en éléments individuels, ou "étale" les propriétés d'un objet dans un autre objet.
+    *   **Fonctionnement :** "Décompose" un itérable (comme un tableau ou une chaîne) en éléments individuels, ou "étale" les propriétés d'un objet dans un autre objet
     *   **Tâches Concrètes (Développement Web) :**
-        *   Cloner des tableaux et des objets (superficiellement).
-        *   Fusionner des tableaux ou des objets.
-        *   Passer des props à des composants React de manière concise (ex: `<MonComposant {...propsObjet} />`).
-        *   Créer de nouveaux tableaux/objets en ajoutant/modifiant des éléments/propriétés sans muter les originaux (important pour l'immutabilité).
+        *   Cloner des tableaux et des objets (superficiellement)
+        *   Fusionner des tableaux ou des objets
+        *   Passer des props à des composants React de manière concise (ex: `<MonComposant {...propsObjet} />`)
+        *   Créer de nouveaux tableaux/objets en ajoutant/modifiant des éléments/propriétés sans muter les originaux (important pour l'immutabilité)
 
 9.  **Modules ES6 (`import` / `export`)**
     ```javascript
@@ -414,11 +414,11 @@ Compilation en français des meilleurs one-liners de JS ES6 et des fonctions les
     // fichier app.js
     import afficherMessageParDefaut, { calculerTotal } from './utils.js';
     ```
-    *   **Fonctionnement :** Un système standardisé pour organiser le code en modules réutilisables. `export` rend des fonctions, objets ou primitives disponibles, et `import` les charge dans d'autres modules.
+    *   **Fonctionnement :** Un système standardisé pour organiser le code en modules réutilisables. `export` rend des fonctions, objets ou primitives disponibles, et `import` les charge dans d'autres modules
     *   **Tâches Concrètes (Développement Web) :**
-        *   Structurer l'ensemble de votre application front-end et/ou back-end (Node.js).
-        *   Partager des fonctions utilitaires, des composants, des services entre différentes parties de votre code.
-        *   Permettre aux outils de build (Webpack, Rollup, Parcel) de faire du "tree-shaking" (éliminer le code non utilisé).
+        *   Structurer l'ensemble de votre application front-end et/ou back-end (Node.js)
+        *   Partager des fonctions utilitaires, des composants, des services entre différentes parties de votre code
+        *   Permettre aux outils de build (Webpack, Rollup, Parcel) de faire du "tree-shaking" (éliminer le code non utilisé)
 
 10. **Promises et `async/await`**
     ```javascript
@@ -435,14 +435,14 @@ Compilation en français des meilleurs one-liners de JS ES6 et des fonctions les
     }
     ```
     *   **Fonctionnement :**
-        *   **Promises :** Représentent l'achèvement (ou l'échec) éventuel d'une opération asynchrone.
-        *   **`async` :** Déclare une fonction qui retourne implicitement une Promise.
-        *   **`await` :** Utilisé à l'intérieur d'une fonction `async`, met en pause l'exécution de la fonction jusqu'à ce que la Promise à sa droite soit résolue ou rejetée. Si résolue, retourne la valeur de résolution. Si rejetée, lève l'erreur.
+        *   **Promises :** Représentent l'achèvement (ou l'échec) éventuel d'une opération asynchrone
+        *   **`async` :** Déclare une fonction qui retourne implicitement une Promise
+        *   **`await` :** Utilisé à l'intérieur d'une fonction `async`, met en pause l'exécution de la fonction jusqu'à ce que la Promise à sa droite soit résolue ou rejetée. Si résolue, retourne la valeur de résolution. Si rejetée, lève l'erreur
     *   **Tâches Concrètes (Développement Web) :**
         *   Effectuer des appels API (`fetch`).
-        *   Interagir avec des bases de données côté serveur (Node.js).
-        *   Gérer toute opération qui prend du temps et qui ne doit pas bloquer le thread principal (ex: lecture de fichier, timers complexes).
-        *   Rendre le code asynchrone beaucoup plus lisible et semblable à du code synchrone.
+        *   Interagir avec des bases de données côté serveur (Node.js)
+        *   Gérer toute opération qui prend du temps et qui ne doit pas bloquer le thread principal (ex: lecture de fichier, timers complexes)
+        *   Rendre le code asynchrone beaucoup plus lisible et semblable à du code synchrone
 
 11. **`fetch()` API**
     ```javascript
@@ -454,11 +454,11 @@ Compilation en français des meilleurs one-liners de JS ES6 et des fonctions les
       .then(data => console.log('Données reçues:', data))
       .catch(error => console.error('Erreur de fetch:', error));
     ```
-    *   **Fonctionnement :** Une interface JavaScript moderne pour effectuer des requêtes HTTP (remplace `XMLHttpRequest`). Elle est basée sur les Promises.
+    *   **Fonctionnement :** Une interface JavaScript moderne pour effectuer des requêtes HTTP (remplace `XMLHttpRequest`). Elle est basée sur les Promises
     *   **Tâches Concrètes (Développement Web) :**
-        *   Récupérer des données depuis des APIs RESTful.
-        *   Envoyer des données à un serveur (avec les méthodes `POST`, `PUT`, etc., en configurant l'objet `options` de `fetch`).
-        *   Interagir avec des services tiers.
+        *   Récupérer des données depuis des APIs RESTful
+        *   Envoyer des données à un serveur (avec les méthodes `POST`, `PUT`, etc., en configurant l'objet `options` de `fetch`)
+        *   Interagir avec des services tiers
 
 12. **Paramètres de Fonction par Défaut**
     ```javascript
@@ -469,10 +469,10 @@ Compilation en français des meilleurs one-liners de JS ES6 et des fonctions les
       return element;
     }
     ```
-    *   **Fonctionnement :** Permet d'assigner des valeurs par défaut aux paramètres d'une fonction si aucun argument n'est fourni pour eux, ou si `undefined` est passé.
+    *   **Fonctionnement :** Permet d'assigner des valeurs par défaut aux paramètres d'une fonction si aucun argument n'est fourni pour eux, ou si `undefined` est passé
     *   **Tâches Concrètes (Développement Web) :**
-        *   Rendre les fonctions plus flexibles et moins sujettes aux erreurs si certains arguments sont optionnels.
-        *   Définir des configurations par défaut pour des fonctions utilitaires ou des constructeurs de composants.
+        *   Rendre les fonctions plus flexibles et moins sujettes aux erreurs si certains arguments sont optionnels
+        *   Définir des configurations par défaut pour des fonctions utilitaires ou des constructeurs de composants
 
 13. **Paramètres Rest `...`**
     ```javascript
@@ -486,7 +486,7 @@ Compilation en français des meilleurs one-liners de JS ES6 et des fonctions les
         *   Créer des fonctions qui acceptent un nombre variable d'arguments (ex: une fonction de logging, une fonction qui combine plusieurs objets de configuration).
         *   Transférer des arguments d'une fonction à une autre.
 
-14. **Optional Chaining `?.`** (Déjà vu, mais son utilité en dev web est immense)
+14. **Optional Chaining `?.`** (Déjà vu, mais très utile donc je répète pour que ça rentre bien XD )
     ```javascript
     const nomAuteur = article?.auteur?.nom ?? 'Anonyme';
     const onClickHandler = props.callbacks?.onClick; // si onClick est optionnel
@@ -494,8 +494,8 @@ Compilation en français des meilleurs one-liners de JS ES6 et des fonctions les
     ```
     *   **Fonctionnement :** Permet d'accéder à des propriétés ou d'appeler des méthodes sur des objets potentiellement `null` ou `undefined` sans causer d'erreur. Si une partie de la chaîne est `null` ou `undefined`, l'expression entière court-circuite et retourne `undefined`.
     *   **Tâches Concrètes (Développement Web) :**
-        *   Accéder en toute sécurité à des données imbriquées provenant d'API ou d'états complexes (très fréquent dans les applications React/Vue/Angular).
-        *   Appeler des fonctions de rappel optionnelles passées en props.
+        *   Accéder en toute sécurité à des données imbriquées provenant d'API ou d'états complexes (très fréquent dans les applications React/Vue/Angular)
+        *   Appeler des fonctions de rappel optionnelles passées en props
         *   Réduire la verbosité des vérifications `if (obj && obj.prop && obj.prop.subProp)`.
 
 15. **`Object.entries()`, `Object.keys()`, `Object.values()`**
@@ -508,44 +508,42 @@ Compilation en français des meilleurs one-liners de JS ES6 et des fonctions les
     }
     ```
     *   **Fonctionnement :**
-        *   `Object.keys(obj)` : Retourne un tableau des propres clés énumérables de `obj`.
-        *   `Object.values(obj)` : Retourne un tableau des propres valeurs énumérables de `obj`.
-        *   `Object.entries(obj)` : Retourne un tableau de paires `[clé, valeur]` des propres propriétés énumérables de `obj`.
+        *   `Object.keys(obj)` : Retourne un tableau des propres clés énumérables de `obj`
+        *   `Object.values(obj)` : Retourne un tableau des propres valeurs énumérables de `obj`
+        *   `Object.entries(obj)` : Retourne un tableau de paires `[clé, valeur]` des propres propriétés énumérables de `obj`
     *   **Tâches Concrètes (Développement Web) :**
-        *   Itérer sur les propriétés d'un objet de configuration pour les afficher ou les traiter.
-        *   Vérifier si un objet contient certaines clés ou valeurs.
-        *   Transformer des objets (ex: convertir un objet en `Map`, ou filtrer un objet pour ne garder que certaines paires clé/valeur).
-        *   Afficher dynamiquement les données d'un objet dans une interface utilisateur.
+        *   Itérer sur les propriétés d'un objet de configuration pour les afficher ou les traiter
+        *   Vérifier si un objet contient certaines clés ou valeurs
+        *   Transformer des objets (ex: convertir un objet en `Map`, ou filtrer un objet pour ne garder que certaines paires clé/valeur)
+        *   Afficher dynamiquement les données d'un objet dans une interface utilisateur
 
 # MA LOGIQUE DE CONSTRUCTION DES FONCTIONS 
 
-## Logique Fondamentale
+## Logique de base
 
-1.  **Compréhension du Problème :** Avant tout, comprenez clairement ce que le code doit accomplir. Quel est l'input ? Quel est l'output attendu ? Quelles sont les étapes logiques intermédiaires ?
-2.  **Simplicité d'abord :** Ne visez pas le one-liner ou la fonction ultra-optimisée dès le début. Écrivez d'abord une version qui fonctionne, même si elle est verbeuse.
-3.  **Lisibilité vs. Concision :** Un one-liner est élégant, mais s'il devient illisible, il perd son utilité. Une fonction doit être compréhensible par vous-même dans 6 mois, ou par un autre développeur. Trouvez le bon équilibre.
-4.  **Fonctions Pures :** Privilégiez les fonctions qui, pour les mêmes entrées, produisent toujours les mêmes sorties et n'ont pas d'effets de bord (ne modifient pas de variables globales ou d'objets en dehors de leur portée). C'est plus facile à tester et à raisonner.
-5.  **DRY (Don't Repeat Yourself) :** Si vous écrivez le même bout de logique plusieurs fois, c'est un bon candidat pour une fonction.
+1.  **Compréhension du Problème :** Avant tout, qu'est-ce qu'on veut faire avec ce code ?. Quel est l'input ? Quel est l'output attendu ? Quelles sont les étapes logiques intermédiaires ?
+2.  **Simplicité d'abord :** On ne vise pas le one-liner ou la fonction ultra-optimisée dès le début. Écrivez d'abord une version qui fonctionne, peu importe la longueur.
+3.  **Lisibilité vs. Concision :** Un one-liner est bien tant qu'il est lisible. Une fonction doit être compréhensible par vous-même dans 6 mois, ou par un autre développeur.
+4.  **Fonctions Pures :** On privilégie les fonctions qui, pour les mêmes entrées, produisent toujours les mêmes sorties et ne modifient pas de variables globales ou d'objets en dehors de leur portée interne. C'est plus facile pour tester et raisonner.
+5.  **DRY (Don't Repeat Yourself) :** Si on écrit le même bout de logique plusieurs fois, c'est un bon candidat pour une fonction.
 
-## Schéma / Outils Mentaux
-
-Pensez en termes de "boîtes à outils" JavaScript :
+## Schémas Mentaux
 
 1.  **Fonctions Fléchées (Arrow Functions `=>`) :**
-    *   Syntaxe concise, surtout pour les retours implicites.
-    *   Pas de `this` propre (hérite du `this` du contexte parent), ce qui peut être un avantage ou un inconvénient selon le cas.
-    *   Idéal pour les callbacks et les petites fonctions.
+    *   Syntaxe concise, surtout pour les retours implicites
+    *   Pas de `this` propre (hérite du `this` du contexte parent)
+    *   Idéal pour les callbacks et les petites fonctions
 
 2.  **Opérateur Ternaire (`condition ? valeur_si_vrai : valeur_si_faux`) :**
-    *   Parfait pour les assignations conditionnelles simples ou les retours.
+    *   Parfait pour les assignations conditionnelles simples ou les retours
 
 3.  **Opérateurs Logiques (`&&`, `||`, `??`) pour le Contrôle de Flux / Valeurs par Défaut :**
-    *   `&&` (ET logique) : `condition && executeSiVrai()` - si `condition` est fausse, `executeSiVrai` n'est pas appelée.
-    *   `||` (OU logique) : `valeurPossiblementFausse || valeurParDefaut` - utile pour les anciennes valeurs par défaut (attention aux valeurs "falsy" comme 0 ou `''`).
-    *   `??` (Nullish Coalescing) : `valeurPossiblementNullOuUndefined ?? valeurParDefaut` - ne remplace que `null` ou `undefined`.
+    *   `&&` (ET logique) : `condition && executeSiVrai()` - si `condition` est fausse, `executeSiVrai` n'est pas appelée
+    *   `||` (OU logique) : `valeurPossiblementFausse || valeurParDefaut` - utile pour les anciennes valeurs par défaut (attention aux valeurs "falsy" comme 0 ou `''`)
+    *   `??` (Nullish Coalescing) : `valeurPossiblementNullOuUndefined ?? valeurParDefaut` - ne remplace que `null` ou `undefined`
 
 4.  **Méthodes d'Array (`.map()`, `.filter()`, `.reduce()`, `.find()`, `.some()`, `.every()`, etc.) :**
-    *   Essentielles pour manipuler des collections de données de manière fonctionnelle et concise. Souvent combinées avec des fonctions fléchées.
+    *   Essentielles pour manipuler des collections de données de manière fonctionnelle et concise.
 
 5.  **Déstructuration (Destructuring Assignment) :**
     *   Pour extraire facilement des valeurs d'objets ou de tableaux. Rend le code plus lisible en nommant directement les variables.
@@ -554,13 +552,13 @@ Pensez en termes de "boîtes à outils" JavaScript :
     *   `function maFonction(param1 = "default") { ... }`
 
 7.  **Spread / Rest Syntax (`...`) :**
-    *   **Spread :** Pour "étaler" les éléments d'un itérable (array, string) dans un autre array, ou les propriétés d'un objet dans un autre objet.
-    *   **Rest :** Pour regrouper les arguments restants d'une fonction dans un tableau.
+    *   **Spread :** Pour "étaler" les éléments d'un itérable (array, string) dans un autre array, ou les propriétés d'un objet dans un autre objet
+    *   **Rest :** Pour regrouper les arguments restants d'une fonction dans un tableau
 
 8.  **Optional Chaining (`?.`) :**
-    *   Pour accéder à des propriétés imbriquées sans avoir à vérifier chaque niveau pour `null` ou `undefined`.
+    *   Pour accéder à des propriétés imbriquées sans avoir à vérifier chaque niveau pour `null` ou `undefined`
 
-## Méthode pour Construire et Créer
+## Méthode pour CONSTRUIRE et CRÉER
 
 ### A. Pour les One-Liners
 
@@ -570,15 +568,15 @@ L'objectif est la concision pour une tâche simple.
     ```javascript
     let nom = utilisateur ? utilisateur.nom : 'Invité';
     ```
-2.  **Identifier les outils de concision :** Ici, l'opérateur ternaire est évident.
+2.  **Identifier les outils de concision :** Ici, l'opérateur ternaire
 3.  **Réécrire :**
     ```javascript
-    const nom = utilisateur?.nom ?? 'Invité'; // Encore mieux avec optional chaining et nullish coalescing
+    const nom = utilisateur?.nom ?? 'Invité'; // Pourraît être mieux avec optional chaining et nullish coalescing, à voir
     // ou
     const nom = utilisateur ? utilisateur.nom : 'Invité';
     ```
 
-    Autre exemple : Doubler chaque nombre d'un tableau.
+    Autre exemple : Doubler chaque nombre d'un tableau
     1.  Logique étendue (boucle) :
         ```javascript
         const nombres = [1, 2, 3];
@@ -587,27 +585,27 @@ L'objectif est la concision pour une tâche simple.
             doubles.push(nombres[i] * 2);
         }
         ```
-    2.  Identifier l'outil : `Array.prototype.map()` est parfait.
+    2.  Identifier l'outil : `Array.prototype.map()` est parfait
     3.  Réécrire en one-liner (ou presque) :
         ```javascript
         const nombres = [1, 2, 3];
         const doubles = nombres.map(n => n * 2);
         ```
 
-### B. Pour Créer de Nouvelles Fonctions
+### B. Pour CRÉER de NOUVELLES FONCTIONS
 
-1.  **Définir le "Contrat" de la Fonction :**
+1.  **Définir le "BUT" de la Fonction :**
     *   **Nom :** Clair et descriptif (verbe + nom, ex: `calculerTotal`, `getUserName`).
-    *   **Paramètres :** Quels inputs ? Sont-ils optionnels ? Quels types ? (Utilisez des paramètres par défaut si pertinent).
+    *   **Paramètres :** Quels inputs ? Sont-ils optionnels ? Quels types ? On utilise des paramètres par défaut si pertinents
     *   **Valeur de Retour :** Que doit retourner la fonction ? Quel type ? Que se passe-t-il en cas d'erreur ou de cas non trouvé ?
-    *   **Objectif Unique (Single Responsibility Principle) :** Une fonction doit faire une chose et la faire bien.
+    *   **Objectif Unique (Single Responsibility Principle) :** Une fonction doit faire une chose et la faire bien
 
 2.  **Écrire le Pseudo-Code ou les Étapes Logiques :**
     *   Exemple : `obtenirAgeUtilisateur(utilisateur)`
-        1.  Si `utilisateur` n'existe pas, retourner `null` (ou lancer une erreur).
-        2.  Si `utilisateur.dateNaissance` n'existe pas, retourner `null`.
-        3.  Calculer la différence entre aujourd'hui et `dateNaissance`.
-        4.  Retourner l'âge en années.
+        1.  Si `utilisateur` n'existe pas, retourner `null` (ou lancer une erreur)
+        2.  Si `utilisateur.dateNaissance` n'existe pas, retourner `null`
+        3.  Calculer la différence entre aujourd'hui et `dateNaissance`
+        4.  Retourner l'âge en années
 
 3.  **Traduire en JavaScript (version initiale, pas forcément optimisée) :**
     ```javascript
@@ -626,24 +624,24 @@ L'objectif est la concision pour une tâche simple.
     }
     ```
 
-4.  **Refactorer pour la Clarté et l'Efficacité (si nécessaire) :**
+4.  **Refactoriser pour la clarté et l'efficacité (si nécessaire) :**
     *   Y a-t-il des répétitions ?
     *   Le code est-il facile à lire ?
     *   Peut-on utiliser des méthodes plus concises sans sacrifier la lisibilité ?
-    *   Dans l'exemple ci-dessus, la logique de calcul d'âge est assez standard. On pourrait la garder telle quelle pour la clarté, ou chercher une bibliothèque si les calculs de date deviennent très complexes.
+    *   Dans l'exemple ci-dessus, la logique de calcul d'âge est assez basique. On pourrait la garder telle quelle pour la clarté, ou chercher une bibliothèque si les calculs de date deviennent plus complexes
 
-5.  **Tester :** Toujours tester avec différents inputs (cas nominaux, cas limites, cas d'erreur).
+5.  **Tester :** Toujours tester avec différents inputs (cas nominaux, cas limites, cas d'erreur)
 
-### C. Pour Refactorer des Fonctions Existantes en Versions plus Simples/Concises
+### C. Pour REFACTORISER des fonctions existantes en versions plus simples
 
-1.  **Comprendre la Fonction Actuelle :** Lisez-la attentivement. Que fait-elle ? Quels sont ses inputs/outputs ?
-2.  **Identifier les Points d'Amélioration :**
-    *   Boucles `for` classiques qui pourraient être remplacées par `.map()`, `.filter()`, `.reduce()`.
-    *   Séries de `if/else if` qui pourraient être simplifiées par un objet de mapping, un switch, ou un ternaire si simple.
-    *   Logique conditionnelle complexe qui pourrait être clarifiée.
-    *   Variables temporaires inutiles.
-3.  **Appliquer les Techniques de Concision (voir "Schéma / Outils Mentaux") :**
-    *   **Exemple :** Transformer une boucle `for` avec `if` en un `.filter().map()`.
+1.  **Comprendre la fonction actuelle :** on la relit. Que fait-elle ? Quels sont ses inputs/outputs ?
+2.  **Identifier les points d'amélioration :**
+    *   Boucles `for` classiques qui pourraient être remplacées par `.map()`, `.filter()`, `.reduce()`
+    *   Séries de `if/else if` qui pourraient être simplifiées par un objet de mapping, un switch, ou un ternaire si simple
+    *   Logique conditionnelle complexe qui pourrait être clarifiée
+    *   Variables temporaires inutiles
+3.  **Appliquer les techniques de concision (voir "Schéma / Outils Mentaux") :**
+    *   **Exemple :** Transformer une boucle `for` avec `if` en un `.filter().map()`
     *   Initial :
         ```javascript
         function getPositiveEvenSquares(numbers) {
@@ -656,7 +654,7 @@ L'objectif est la concision pour une tâche simple.
             return results;
         }
         ```
-    *   Refactoré :
+    *   Refactorisée :
         ```javascript
         const getPositiveEvenSquares = (numbers) =>
             numbers.filter(n => n > 0 && n % 2 === 0)
@@ -665,17 +663,20 @@ L'objectif est la concision pour une tâche simple.
 
 ## En résumé
 
-1.  **Analyse :** Définir le besoin.
-2.  **Ébauche :** Écrire une première version fonctionnelle.
+1.  **Analyse :** Définir le besoin
+2.  **Ébauche :** Écrire une première version fonctionnelle
 3.  **Identification d'Outils :**
-    *   Pour concision : Fonctions fléchées, ternaire, opérateurs logiques, méthodes d'array, déstructuration, optional chaining.
-    *   Pour structure : Nommage clair, paramètres par défaut, gestion des cas d'erreur.
+    *   Pour concision : Fonctions fléchées, ternaire, opérateurs logiques, méthodes d'array, déstructuration, optional chaining
+    *   Pour structure : Nommage clair, paramètres par défaut, gestion des cas d'erreur
 4.  **Refactorisation / Création :**
-    *   Appliquer les outils identifiés.
-    *   Chercher l'équilibre entre concision et lisibilité.
-    *   Pour les fonctions, s'assurer qu'elles respectent le principe de responsabilité unique.
-5.  **Test :** Valider le résultat.
+    *   Appliquer les outils identifiés
+    *   Chercher l'équilibre entre concision et lisibilité
+    *   Pour les fonctions, s'assurer qu'elles respectent le principe de responsabilité unique
+5.  **Test :** Valider le résultat
 
 **Un dernier conseil important :** N'abusez pas des one-liners au point de rendre le code cryptique. La maintenabilité et la lisibilité sont souvent plus précieuses qu'une ligne de code en moins !
+---
+
+## En espérant que ça serve à quelqu'un d'autre, si ça vous a apporté quelque chose, n'hésitez pas à mettre une étoile au repo et à partager. Bon je remercie aussi l'IA qui m'a permis de reformuler de manière plus concise toutes ses notes qui traînaient.
 ---
 
