@@ -527,7 +527,7 @@ Compilation en français des meilleurs one-liners de JS ES6 et des fonctions les
 4.  **Fonctions Pures :** On privilégie les fonctions qui, pour les mêmes entrées, produisent toujours les mêmes sorties et ne modifient pas de variables globales ou d'objets en dehors de leur portée interne. C'est plus facile pour tester et raisonner.
 5.  **DRY (Don't Repeat Yourself) :** Si on écrit le même bout de logique plusieurs fois, c'est un bon candidat pour une fonction.
 
-## Schémas Mentaux
+## Schémas Mentaux et les outils
 
 1.  **Fonctions Fléchées (Arrow Functions `=>`) :**
     *   Syntaxe concise, surtout pour les retours implicites
