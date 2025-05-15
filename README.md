@@ -677,6 +677,6 @@ L'objectif est la concision pour une tâche simple.
 **Un dernier conseil important :** N'abusez pas des one-liners au point de rendre le code cryptique. La maintenabilité et la lisibilité sont souvent plus précieuses qu'une ligne de code en moins !
 ---
 
-## En espérant que ça serve à quelqu'un d'autre, si ça vous a apporté quelque chose, n'hésitez pas à mettre une étoile au repo et à partager. Bon je remercie aussi l'IA qui m'a permis de reformuler de manière plus concise toutes ses notes qui traînaient.
+### En espérant que ça serve à quelqu'un d'autre, si ça vous a apporté quelque chose, n'hésitez pas à mettre une étoile au repo et à partager. Bon je remercie aussi l'IA qui m'a permis de reformuler de manière plus concise toutes ses notes qui traînaient.
 ---
 
